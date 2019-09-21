@@ -6,7 +6,7 @@ using namespace std;
 
 // La función que se desea integrar, que retornará un valor de tipo double (decimal)
 double f(double x) {
-	// Función exponencial elevada a x
+	// Función exponencial, e^x
 	//return exp(x);
 
 	// Si desea integrar x al cubo de a -> b:
@@ -37,6 +37,7 @@ double Simpson(double a, double b, int N) {
 	// Se declara una variable, a la cual se le irán sumando todas las evaluaciones, desde x = a, hasta x = b, con pasos a+xi
 	double Sum = 0;
 
+	// Repetir el siguiente bucle N veces, i empieza en 0, y termina en N-1
 	for (int i = 0; i <= N; i++) {
 		// Si es el inicio del búcle, evaluar f(a+xi) y agregar a la variable Sum
 		if(i == 0) {
@@ -60,7 +61,7 @@ double Simpson(double a, double b, int N) {
 // Aquí inicia el programa
 int main()
 {
-	// Se crea una variable sum, a la cual se le asignará el valor de la funcion Simpson, evaluada entre 2 y 6, con N=20 divisiones
+	// Se crea una variable sum, a la cual se le asignará el valor de la funcion Simpson, evaluada entre 2 y 6, con N=40 divisiones
 	double suma = Simpson(2, 6, 40);
 	
 	// Imprimir a la consola el valor de la integral
