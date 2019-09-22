@@ -39,6 +39,7 @@ double Simpson(double a, double b, int N) {
 	double Suma = 0;
 
 	// Repetir el siguiente bucle N veces, i empieza en 0, y termina en N
+	// Sumándole 1 a la variable i, por cada iteración completada
 	for (int i = 0; i <= N; i++) {
 		// Si es el inicio del búcle, evaluar f(a+xi) y agregar a la variable Suma
 		if(i == 0) {
