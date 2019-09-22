@@ -5,6 +5,7 @@
 using namespace std;
 
 // La función que se desea integrar, que retornará un valor de tipo double (decimal)
+// Recibe el argumento numérico x
 double f(double x) {
 	// Función exponencial, e^x
 	//return exp(x);
@@ -26,7 +27,7 @@ double f(double x) {
 // Devuelve un valor de tipo double (decimal)
 double Simpson(double a, double b, int N) {
 	// Si N no es número par, abortar.
-	if (N%2) {
+	if (N % 2) {
 		cout << "N debe de ser un número par" << endl;
 		exit(EXIT_FAILURE);
 	}
@@ -35,20 +36,20 @@ double Simpson(double a, double b, int N) {
 	double dx = (b-a)/N;
 	
 	// Se declara una variable, a la cual se le irán sumando todas las evaluaciones, desde x = a, hasta x = b, con pasos a+xi
-	double Sum = 0;
+	double Suma = 0;
 
-	// Repetir el siguiente bucle N veces, i empieza en 0, y termina en N-1
+	// Repetir el siguiente bucle N veces, i empieza en 0, y termina en N
 	for (int i = 0; i <= N; i++) {
-		// Si es el inicio del búcle, evaluar f(a+xi) y agregar a la variable Sum
+		// Si es el inicio del búcle, evaluar f(a+xi) y agregar a la variable Suma
 		if(i == 0) {
-			Sum += f(a);
-		// Si es el final del búcle, evaluar f(a+xi) y agregar a la variable Sum
+			Suma += f(a);
+		// Si es el final del búcle, evaluar f(a+xi) y agregar a la variable Suma
 		} else if (i == N) {
-			Sum += f(b);
-		// Sí i es par, entonces evaluar f(a+xi), multiplicar por 2, y agregar a la variable Sum
+			Suma += f(b);
+		// Sí i es par, entonces evaluar f(a+xi), multiplicar por 2, y agregar a la variable Suma
 		} else if (!(i % 2)) {
 			Sum += 2*f(a+i*dx);
-		// Sí i es impar, entonces evaluar f(a+xi), multiplicar por 4, y agregar a la variable Sum
+		// Sí i es impar, entonces evaluar f(a+xi), multiplicar por 4, y agregar a la variable Suma
 		} else {
 			Sum += 4*f(a+i*dx);
 		}
@@ -61,11 +62,13 @@ double Simpson(double a, double b, int N) {
 // Aquí inicia el programa
 int main()
 {
-	// Se crea una variable sum, a la cual se le asignará el valor de la funcion Simpson, evaluada entre 2 y 6, con N=40 divisiones
-	double suma = Simpson(2, 6, 40);
+	// Se crea una variable sum
+	// a la cual se le asignará el valor de la funcion Simpson
+	// evaluada entre 2 y 6, con N=40 divisiones
+	double SumaSimpson = Simpson(2, 6, 40);
 	
 	// Imprimir a la consola el valor de la integral
-	cout << suma << std::endl;
+	cout << SumaSimpson << std::endl;
 
 	// Termina el programa sin problemas.
 	return 0;
