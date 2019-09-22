@@ -48,15 +48,15 @@ double Simpson(double a, double b, int N) {
 			Suma += f(b);
 		// Sí i es par, entonces evaluar f(a+xi), multiplicar por 2, y agregar a la variable Suma
 		} else if (!(i % 2)) {
-			Sum += 2*f(a+i*dx);
+			Suma += 2*f(a+i*dx);
 		// Sí i es impar, entonces evaluar f(a+xi), multiplicar por 4, y agregar a la variable Suma
 		} else {
-			Sum += 4*f(a+i*dx);
+			Suma += 4*f(a+i*dx);
 		}
 		// Lo anterior es igual a: (f(X0) + 4f(X1) + 2f(X2) + 4f(X3)... 2f(Xn-2) + 4f(Xn-1) + f(n))
 	}
 	// Multiplicar la suma por dx/3, y devolver el valor.
-	return Sum*(dx/3.0);
+	return Suma*(dx/3.0);
 }
 
 // Aquí inicia el programa
