@@ -104,7 +104,7 @@ for i in range(0, columnas):
             # Se convierte a una cadena de caracteres, y se procede a buscar
             # en nuestro alfabeto, el valor, que tiene la cadena de caracteres "17"
             # Por como fué definido nuestro alfabeto, sabemos que 17 = P
-            # Por lo que el  la letra retornada será P
+            # Por lo que la letra retornada será P
             # (La conversión a cadena de caracteres debió hacerse por como funcionan los "dict" [diccionarios] en python)
         # Luego de obtener nuestra letra, la imprimimos a la consola
         # El argumento end='' (nada) es porque la función print() de python, siempre incluye al final un "newline"
@@ -286,7 +286,7 @@ for i in range(columnas):
             # Se convierte a una cadena de caracteres, y se procede a buscar
             # en nuestro alfabeto, el valor, que tiene la cadena de caracteres "17"
             # Por como fué definido nuestro alfabeto, sabemos que 17 = P
-            # Por lo que el  la letra retornada será P
+            # Por lo que la letra retornada será P
             # (La conversión a cadena de caracteres debió hacerse por como funcionan los "dict" [diccionarios] en python)
         # Luego de obtener nuestra letra, la imprimimos a la consola
         # El argumento end='' (nada) es porque la función print() de python, siempre incluye al final un "newline"
