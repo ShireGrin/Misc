@@ -4,24 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 #%matplotlib inline
 
-#def simps(f, a, b, N=20):
-#    if(N % 2 == 1):
-#        raise ValueError("N debe ser un entero par.")
-#    dx = (b - a)/N
-#    x = np.linspace(a, b, N + 1)
-#    y = f(x)
-#    S = dx/3 * np.sum(y[0:-1:2] + 4*y[1::2] + y[2::2])
-#    return S
-#
-#def trap(f, a, b, N=18):
-#    x = np.linspace(a, b, N+1)
-#    y = f(x)
-#    y_right = y[1:]
-#    y_left = y[:-1]
-#    dx = (b - a)/N
-#    T = (dx/2) * np.sum(y_right + y_left)
-#    return T
-
+# La siguiente función, recibe 3 argumentos obligatorios, y uno opcional
+# f será la función que se integrará
+# a será el límite inferior
+# b será el límite superior
+# N por defecto será 40, pero se puede cambiar para dividir el área bajo la curva en N divisiones, como se desee.
 def trap(f, a, b, N=40):
     dx = (b-a)/N
     x = np.linspace(a, b, N+1)
@@ -40,6 +27,11 @@ def trap(f, a, b, N=40):
     plt.show()
     return SumaTrapezoidal
 
+# La siguiente función, recibe 3 argumentos obligatorios, y uno opcional
+# f será la función que se integrará
+# a será el límite inferior
+# b será el límite superior
+# N por defecto será 18, pero se puede cambiar para dividir el área bajo la curva en N divisiones, como se desee.
 def simps(f, a, b, N=18):
     if(N % 2 == 1):
         raise ValueError("N debe ser un entero par.")
@@ -57,5 +49,8 @@ def simps(f, a, b, N=18):
     plt.show()
     return S
 
+# Se llama a la función, con la función que se pide en el proyecto, de cero a pi.
 simps(lambda x : (np.sin(x))/(1+x), 0, np.pi)
-#trap(lambda x : 1/(x**2+x+1), 0, 1)
+
+# Se llama a la función, con la función que se pide en el proyecto, de cero a uno.
+trap(lambda x : 1/(x**2+x+1), 0, 1)
