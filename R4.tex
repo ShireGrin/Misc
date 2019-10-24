@@ -1,0 +1,173 @@
+\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}
+%
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%
+%Paquete de Idioma
+\usepackage[spanish]{babel}
+%
+%Codificación Alfabeto
+\usepackage[utf8]{inputenc}
+%
+%Codificación de Fuente
+\usepackage[T1]{fontenc}
+%
+%Índice
+\usepackage{makeidx}
+%
+%Gráficos
+\usepackage{graphicx}
+\usepackage{subfig}
+%\usepackage{xcolor} 
+%
+%Matemática
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{amstext} 
+%
+%Estilo de Página Numeración superior
+%\pagestyle{headings}
+%
+%Hiperlinks \href{url}{text}
+\usepackage[pdftex]{hyperref}
+%
+%Graficos y tablas
+\usepackage{multirow}
+%\usepackage{multicol}
+\usepackage{float}
+\usepackage{booktabs}
+%
+\decimalpoint
+%\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,mybibfile}
+%
+%
+\begin{document}
+%Titulo
+\title{Laboratorio 4: Movimiento Parabólico}
+\thanks{Laboratorios de Física}
+
+\author{Brayan Alexander, Mejía Barrientos, 201900576}\email{e-mail: correo1@dominio1}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Angie Alejandra, Arévalo López, 201901977}\email{e-mail: correo2@dominio2}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Juan José, Hernández Escobar, 201901486}\email{e-mail: correo3@dominio3}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Juan Pablo, Sánchez Córdova, 201908274}\email{e-mail: correo3@dominio3}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+
+%\collaboration{MUSO Collaboration}%\noaffiliation
+
+%\date{\today}%
+
+%Resumen
+\begin{abstract}
+	Se realizó la práctica con el objetivo de comprobar la veracidad de las ecuaciones de movimiento parabólico uniforme-mente variado. La comprobación será realizada por la comparación entre los resultados teóricos [aquellos que se supone deberíamos obtener/por métodos matemáticos], y los datos obtenidos experimentalmente. Se contrapondrán en un diagrama de incertezas, para resaltar y esclarecer las diferencias/similitudes entre lo que se esperaba y lo que se obtuvo.
+\end{abstract}
+
+\maketitle{}
+
+\section{Objetivos}
+\subsection{Generales}
+\begin{itemize}
+\item[$\bullet$] Comprobar/Confirmar la veracidad de las ecuaciones de MRUV.
+\end{itemize}
+\subsection{Específicos}
+\begin{itemize}
+\item[*] Obtener distancia recorrida por la esfera experimentalmente.
+\item[*] Obtener distancia recorrida por la esfera teóricamente.
+\item[*] Contraponer gráficamente ámbas distancias para comprender las diferencias/similitudes.
+\end{itemize}
+ 
+\section{Marco Teórico}
+Teóricamente se sabe que las magnitudes de velocidades y/o aceleraciones de una partícula en alguno de sus ejes, no deberían afectar a las otras en otros ejes o dimensiones en las que se encuentre dicha partícula. Prueba de esto es que aunque la partícula [esfera] llevara una velocidad sobre el eje x, esto no influyó de alguna forma en la aceleración y/o velocidad que tuviera la partícula sobre el eje y. Por lo que ámbas magnitudes podrían "trabajarse" matemáticamente por separado. Sobre el eje y, era como sí la partícula hubiera estado en caída libre, por lo que su velocidad inicial [por motivos de simplificación] se podía considerar como 0. Y su aceleración era causada por la fuerza de gravedad $ 9.8 \frac{m}{s^2}$ "negativamente", que solo quería decir que la partícula estaba aumentando su velocidad "hacia abajo" por cada fracción de tiempo. Ahora, visto desde la dimensión x de la partícula, al estar fuera del borde de la mesa, la partícula llevaba ya una velocidad inicial, que causaba que siguiera moviéndose sobre este eje. Pero esto solo sucedía mientras la partícula estaba cayendo. Luego de cierta cantidad de tiempo t, la partícula chocó contra el suelo y sus magnitudes en ámbos ejes se vieron interrumpidas [No analizaremos eso por ahora]. Este tiempo fué el mismo para ámbos ejes. Vista desde el eje x, la partícula iba en movimiento rectilíneo uniforme, por lo que su posición/recorrido x estaría dado por $ x = v_ot$. Pero vista desde el eje y, la partícula cambiaba su posición parabólicamente, siguiendo el modelo cuadrático $ \Delta y = \frac{1}{2}at^2$ [como se discutió, se considera que la velocidad inicial es nula].
+
+\section{Diseño Experimental}
+
+Hace una descripción del método o técnica utilizada para medir y/o calcular las
+magnitudes físicas en estudio, y si es del caso, del aparato de medición. Hay que
+recordar que el "método" es el procedimiento o dirección que conducirá a la solución
+del problema planteado. Se recomienda redactar una breve introducción para explicar
+el enfoque metodológico seleccionado.\\
+
+\subsection{Materiales}
+\begin{itemize}
+\item[*] Una esfera
+\item[*] Una regla métrica de un metro o cinta métrica
+\item[*] Un cronómetro
+\item[*] Una cinta de papel de dos metros de largo y 15 cm de cinta adhesiva
+\item[*] Un trozo de papel manila y un papel pasante
+\item[*] Un cuadro de duroport ó una tablilla de madera
+\item[*] Dos trocitos de madera y una plomada.
+
+\end{itemize}
+
+
+\subsection{Magnitudes físicas a medir}
+\begin{itemize}
+\item[*] La posición x de la esfera, respecto a un punto de referencia arbitrariamente escogido.
+\item[*] El tiempo t que tarda la esfera en llegar a la posición x.
+\item[*] La altura h del piso a borde de la mesa y el recorrido horizontal L.
+\end{itemize}
+
+\subsection{Procedimiento}
+\begin{enumerate}
+\item[*] Se levantó el tablero con un par de trozos de madera, formando así un plano inclinado.
+\item[*] Se seleccionó un sistema de referencia, para medir la posición x en una cinta de papel que servirá como riel. Con la regla métrica, se señalaron distintas posiciones, separadas por unos 20 centímetros.
+\item[*] Se soltó la esfera desde la posición $x_o = 0 cm $ y se midió 10 veces el tiempo que le tomó alcanzar cada posición $x_i$, es decir: $x_1 = 20 cm$, $x_2 = 40 cm$, etc.
+\item[*] Se tabuló y se realizó un promedio de los datos experimentales en una tabla como la que se muestra a continuación, siendo la incerteza de la posición x la medida más pequeña que poseía nuestra regla métrica. Siendo la incerteza del tiempo la desviación estándar $\sigma_t$ de cada grupo de datos de tiempo.
+\item[*] Se realizó un gráfico en qtiplot de posición vs tiempo, es decir (x vs t).
+\item[*] Se realizó un fit del gráfico y se obtuvo una función de la forma $Y = Ax^2$, al comparar esta función con las ecuaciones del movimiento rectilíneo uniforme-mente variado, fué fácil observar que $ A = \frac{1}{2}a $, despejando se tiene que $ a = 2A$.
+\end{enumerate}
+
+\section{Resultados}
+Los resultados se analizan, en general, por medio de gráficos o diagramas,
+debidamente identificados, que muestran el comportamiento entre las magnitudes
+medidas o que permiten calcular otras magnitudes. Dependiendo de lo extenso de las
+gráficas y/o tablas, éstas se pueden anexar al final del trabajo.\\
+
+Todos los datos obtenidos deben ir acompañados de las unidades dimensionales,
+con su debida incertidumbre de medida, que mostrarán la calidad, precisión y
+reproductibilidad de las mediciones. Éstos deben ser consistentes, a lo largo del
+reporte.\\
+
+
+\section{Discusión de Resultados}
+
+En este apartado se deben analizar los resultados obtenidos, contrastándolos con
+la teoría expuesta en la sección del Marco Teórico. Corresponde explicar el
+comportamiento de las tablas y gráficas expuestas en la sección de Resultados,
+tomando en cuenta el análisis estadístico apropiado.\\
+
+\section{Conclusiones}
+
+Las conclusiones son interpretaciones lógicas del análisis de resultados, que
+deben ser consistentes con los objetivos presentados previamente.\\
+
+\begin{enumerate}
+\item Conclusión 1
+\item Conclusión 2
+\item etc.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+%Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
+
+\bibitem{} Grossman, S. (Segunda edición). (1987). \textit{Álgebra lineal}. México: Grupo Editorial Iberoamericana.
+
+\bibitem{} Reckdahl, K. (Versión [3.0.1]). (2006).\textit{ Using Imported Graphics in LATEX and pdfLATEX}.
+
+\bibitem{}Nahvi, M., \& Edminister, J. (Cuarta edición). (2003). \textit{Schaum's outline of Theory and problems of electric circuits}. United States of America: McGraw-Hill.
+
+\bibitem{} Haley, S.(Feb. 1983).\textit{The Thévenin Circuit Theorem and Its Generalization to Linear Algebraic Systems}. Education, IEEE Transactions on, vol.26, no.1, pp.34-36.
+
+\bibitem{}Anónimo.\textit{ I-V Characteristic Curves} [En linea][25 de octubre de 2012]. Disponible en:\\ \url{http://www.electronics-tutorials.ws/blog/i-v-characteristic-curves.html}
+\end{thebibliography}
+
+
+\end{document}
