@@ -1,0 +1,200 @@
+\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}
+%
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%
+%Paquete de Idioma
+\usepackage[spanish]{babel}
+%
+%Codificación Alfabeto
+\usepackage[utf8]{inputenc}
+%
+%Codificación de Fuente
+\usepackage[T1]{fontenc}
+%
+%Índice
+\usepackage{makeidx}
+%
+%Gráficos
+\usepackage{graphicx}
+\graphicspath{{./imgs/}}
+\usepackage{subfig}
+%\usepackage{xcolor} 
+%
+%Matemática
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{amstext} 
+%
+%Estilo de Página Numeración superior
+%\pagestyle{headings}
+%
+%Hiperlinks \href{url}{text}
+\usepackage[pdftex]{hyperref}
+%
+%Graficos y tablas
+\usepackage{multirow}
+%\usepackage{multicol}
+\usepackage{float}
+\usepackage{booktabs}
+%
+\decimalpoint
+\usepackage{cancel}
+%\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,mybibfile}
+%
+%
+\begin{document}
+%Titulo
+\title{Laboratorio 4: Movimiento Parabólico}
+\thanks{Laboratorios de Física}
+
+\author{Brayan Alexander, Mejía Barrientos, 201900576}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Angie Alejandra, Arévalo López, 201901977}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Juan José, Hernández Escobar, 201901486}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Juan Pablo, Sánchez Córdova, 201908274}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+
+%\collaboration{MUSO Collaboration}%\noaffiliation
+
+%\date{\today}%
+
+%Resumen
+\begin{abstract}
+	Se realizó la práctica con el objetivo de comprobar la veracidad de las ecuaciones de movimiento parabólico uniforme-mente variado. La comprobación será realizada por la comparación entre los resultados teóricos [aquellos que se supone deberíamos obtener/por métodos matemáticos], y los datos obtenidos experimentalmente. Se contrapondrán en un diagrama de incertezas, para resaltar y esclarecer las diferencias/similitudes entre lo que se esperaba y lo que se obtuvo.
+\end{abstract}
+
+\maketitle{}
+
+\section{Objetivos}
+\subsection{Generales}
+\begin{itemize}
+\item[$\bullet$] Comprobar/Confirmar la veracidad de las ecuaciones de MRUV.
+\end{itemize}
+\subsection{Específicos}
+\begin{itemize}
+\item[*] Determinar la distancia horizontal desde el momento en el que la esfera empieza a caer en movimiento parabolico utilizando instrumentos de medición con sus debidas incertezas.
+\item[*] Determinar la distancia horizontal desde el momento en el que la esfera empieza a caer en movimiento parabolico descendente, teóricamente.
+\item[*] Comparar las medidas de incerteza entre ambas distancias horizontales durante el momento en el que la esfera entra en movimiento parabólico, para comprender las diferencias y similitudes.
+\end{itemize}
+ 
+\section{Marco Teórico}
+Teóricamente se sabe que las magnitudes de velocidades y/o aceleraciones de una partícula en alguno de sus ejes, no deberían afectar a las otras en otros ejes o dimensiones en las que se encuentre dicha partícula. Prueba de esto es que aunque la partícula [esfera] llevara una velocidad sobre el eje x, esto no influyó de alguna forma en la aceleración y/o velocidad que tuviera la partícula sobre el eje y. Por lo que ámbas magnitudes podrían "trabajarse" matemáticamente por separado. Sobre el eje y, era como sí la partícula hubiera estado en caída libre, por lo que su velocidad inicial [por motivos de simplificación] se podía considerar como 0. Y su aceleración era causada por la fuerza de gravedad $ 9.8 \frac{m}{s^2}$ "negativamente", que solo quería decir que la partícula estaba aumentando su velocidad "descendente" por cada fracción de tiempo. Ahora, visto desde la dimensión x de la partícula, al estar fuera del borde de la mesa, la partícula llevaba ya una velocidad inicial, que causaba que siguiera moviéndose sobre este eje. Pero esto solo sucedía mientras la partícula estaba cayendo. Luego de cierta cantidad de tiempo t, la partícula chocó contra el suelo y sus magnitudes en ámbos ejes se vieron interrumpidas [No analizaremos eso por ahora]. Este tiempo fué el mismo para ámbos ejes. Vista desde el eje x, la partícula iba en movimiento rectilíneo uniforme, por lo que su posición/recorrido x estaría dado por $ x = v_ot$. Pero vista desde el eje y, la partícula cambiaba su posición parabólicamente, siguiendo el modelo cuadrático $ \Delta y = \frac{1}{2}at^2$ [como se discutió, se considera que la velocidad inicial es nula].
+Teóricamente se sabe que las magnitudes de velocidades y/o aceleraciones de una partícula en alguno de sus ejes, no deberían afectar a las otras en otros ejes o dimensiones en las que se encuentre dicha partícula. Prueba de esto es que aunque la partícula [esfera] llevara una velocidad sobre el eje x, esto no influyó de alguna forma en la aceleración y/o velocidad que tuviera la partícula sobre el eje y. Por lo que ámbas magnitudes podrían "trabajarse" matemáticamente por separado. Sobre el eje y, era como sí la partícula hubiera estado en caída libre, por lo que su velocidad inicial [por motivos de simplificación] se podía considerar como 0. Y su aceleración era causada por la fuerza de gravedad $ 9.8 \frac{m}{s^2}$ "negativamente", que solo quería decir que la partícula estaba aumentando su velocidad "descendente" por cada fracción de tiempo. Ahora, visto desde la dimensión x de la partícula, al estar fuera del borde de la mesa, la partícula llevaba ya una velocidad inicial, que causaba que siguiera moviéndose sobre este eje. Pero esto solo sucedía mientras la partícula estaba cayendo. Luego de cierta cantidad de tiempo t, la partícula chocó contra el suelo y sus magnitudes en ámbos ejes se vieron interrumpidas [No analizaremos eso por ahora]. Este tiempo fué el mismo para ámbos ejes. Vista desde el eje x, la partícula iba en movimiento rectilíneo uniforme, por lo que su posición/recorrido x estaría dado por $ x = v_ot$. Pero vista desde el eje y, la partícula cambiaba su posición parabólicamente, siguiendo el modelo cuadrático $ \Delta y = \frac{1}{2}at^2$ [como se discutió, se considera que la velocidad inicial es nula].
+
+\section{Diseño Experimental}
+Velocidad Final\\
+$V_fx = \cancelto{0}{V_ox} + at $\\
+Ya que la esfera partió del reposo, cancelamos el término que tiene a la velocidad inicial, ya que esta es igual a 0.
+Entonces:\\
+$V_{fx} = at $\\
+$ V_{fx} = (at \pm at(\frac{\Delta a}{a} + \frac{\Delta t}{t})) m/s$\\
+$V_{fx} = (0.209\frac{m}{s^2}*2.80s \pm 0.209\frac{m}{s^2}*2.80s(\frac{0.005}{0.209} + \frac{0.07}{2.80})) \frac{m}{s}$\\
+$V_{fx} = (0.59 \pm 0.03) \frac{m}{s} $\\
+
+Longitud Experimental\\
+$ L_e = (\bar x \pm \sigma_x) m$\\
+
+Donde:\\
+$\bar x$ : Media de las distancias que la esfera recorrió en x trás separarse de la mesa.\\
+$\sigma_x$ : Desviación estándar de las distancias que la esfera recorrió en x trás separarse de la mesa.\\
+
+$ L_e = (0.238 \pm 0.002) m $\\
+
+
+Longitud Teórica\\
+$ L_t = \sqrt{\frac{2}{g}}\Big[V_x\sqrt{y} \pm V_x\sqrt{y}\big(\frac{\Delta V_x}{V_x} + \frac{\Delta y}{2\sqrt{y}}\big)\Big]$\\
+$ L_t = \sqrt{\frac{2}{9.8}}\Big[0.59\sqrt{0.98} \pm 0.59\sqrt{0.98}\big(\frac{\Delta 0.03}{0.59} + \frac{\Delta 0.00001}{2\sqrt{0.98}}\big)\Big]$\\
+$ L_t = (0.26 \pm 0.01) m$\\
+
+
+\subsection{Materiales}
+\begin{itemize}
+\item[*] Una esfera
+\item[*] Una regla métrica de un metro o cinta métrica
+\item[*] Un cronómetro
+\item[*] Una cinta de papel de dos metros de largo y 15 cm de cinta adhesiva
+\item[*] Un trozo de papel manila y un papel pasante
+\item[*] Un cuadro de duroport ó una tablilla de madera
+\item[*] Dos trocitos de madera y una plomada.
+
+\end{itemize}
+
+
+\subsection{Magnitudes físicas a medir}
+\begin{itemize}
+\item[*] La posición x de la esfera, respecto a un punto de referencia arbitrariamente escogido.
+\item[*] El tiempo t que tarda la esfera en llegar a la posición x.
+\item[*] La altura h del piso a borde de la mesa y el recorrido horizontal L.
+\end{itemize}
+
+\subsection{Procedimiento}
+\begin{enumerate}
+\item[*] Se levantó el tablero con un par de trozos de madera, formando así un plano inclinado.
+\item[*] Se seleccionó un sistema de referencia, para medir la posición x en una cinta de papel que servirá como riel. Con la regla métrica, se señalaron distintas posiciones, separadas por unos 20 centímetros.
+\item[*] Se soltó la esfera desde la posición $x_o = 0 cm $ y se midió 10 veces el tiempo que le tomó alcanzar cada posición $x_i$, es decir: $x_1 = 20 cm$, $x_2 = 40 cm$, etc.
+\item[*] Se tabuló y se realizó un promedio de los datos experimentales en una tabla como la que se muestra a continuación, siendo la incerteza de la posición x la medida más pequeña que poseía nuestra regla métrica. Siendo la incerteza del tiempo la desviación estándar $\sigma_t$ de cada grupo de datos de tiempo.
+\item[*] Se realizó un gráfico en qtiplot de posición vs tiempo, es decir (x vs t).
+\item[*] Se realizó un fit del gráfico y se obtuvo una función de la forma $Y = Ax^2$, al comparar esta función con las ecuaciones del movimiento rectilíneo uniforme-mente variado, fué fácil observar que $ A = \frac{1}{2}a $, despejando se tiene que $ a = 2A$.
+\end{enumerate}
+
+\section{Resultados}
+\begin{figure}[H]
+	\centering
+	\caption{Tabla de tiempos y distancias con sus respectivos errores}
+	\includegraphics[scale=0.4]{TablaPvsT}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\caption{Gráfica de Posición-Tiempo}
+	\includegraphics[scale=0.4]{GPvsT}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\caption{Tabla de incertezas de L}
+	\includegraphics[scale=0.4]{TablaDIL}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de Incertezas de L}
+	\includegraphics[scale=0.4]{DIL}
+\end{figure}
+
+\section{Discusión de Resultados}
+Al rodar una esfera metálica sobre una superficie ligeramente inclinada se observo   que la aceleración aumenta en relación al cambio diferencial de distancia-tiempo  hasta llegar al borde de la tabla cae  hacia el suelo en ese instante su  aceleración se vuelve constante ya que a partir de ahí el movimiento de la esfera es  parabólico la velocidad en x es constante,  la que varia es la aceleración y la velocidad  en  Y. Para la longitud L los datos experimentales tienen una menor incerteza que los datos Calculados esto se debe a que alteramos indirectamente al mientras mas manipulemos los datos al momento de calcular  tendremos un margen de error mayor, como se puede observar en la gráfica 2.
+
+\section{Conclusiones}
+
+\begin{enumerate}
+\item No fué tan complicada la obtención de la longitud recorrida horizontalmente por la esfera mientras caía, describiendo un movimiento parabólico. Ya que solo consistía en el empleamiento de diversos intrumentos de medición. 
+\item La obtención de la longitud que teóricamente la esfera debió recorrer, fué más complicada, ya que se necesitaba determinar los valores de parámetros como la aceleración, causada por la gravedad, en la superficie inclinada. Por esta razón, fué que se realizaron distintas corridas, midiendo el tiempo que le tomaba a la esfera recorrer distancias previamente determinadas por el instructor. De esta manera, por medio del programa QtiPlot, podíamos realizar un fit, y obtener el valor del parámetro aceleración, en la ecuación cinemática del movimiento rectilineo uniformemente variado. Al tener la aceleración, podríamos obtener la velocidad que llevaba al separarse de la superficie inclinada. Y luego, conociendo la altura del suelo a la mesa, podríamos obtener el tiempo que le tomó a la esfera caer, suponiendo que la velocidad inicial en el eje y era igual a 0; Y sabiendo que la aceleración en el eje y es igual a 9.8m/s2, podríamos despejar para t, y obtener el tiempo tardó la esfera en tocar el suelo. Con este mismo tiempo, y teniendo la velocidad final de la esfera, podríamos obtener, cuánto se desplazó la esfera en el eje x. 
+\item Al comparar ámbas longitudes, se nota que la longitud teórica es mayor que la experimental. Es decir, teóricamente, la esfera debería haber caído más lejos. Pero esto no sucedió, quizá por la resistencia que pudiera representar la fuerza del aire, sumado a que quizá nosotros le dimos cierta velocidad inicial a la esfera, de manera, que no permitimos que la aceleración hiciera su trabajo, y aumentara la velocidad de la esfera, como se esperaba.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+%Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
+
+\bibitem{} Grossman, S. (Segunda edición). (1987). \textit{Álgebra lineal}. México: Grupo Editorial Iberoamericana.
+
+\bibitem{} Reckdahl, K. (Versión [3.0.1]). (2006).\textit{ Using Imported Graphics in LATEX and pdfLATEX}.
+
+\bibitem{}Nahvi, M., \& Edminister, J. (Cuarta edición). (2003). \textit{Schaum's outline of Theory and problems of electric circuits}. United States of America: McGraw-Hill.
+
+\bibitem{} Haley, S.(Feb. 1983).\textit{The Thévenin Circuit Theorem and Its Generalization to Linear Algebraic Systems}. Education, IEEE Transactions on, vol.26, no.1, pp.34-36.
+
+\bibitem{}Anónimo.\textit{ I-V Characteristic Curves} [En linea][25 de octubre de 2012]. Disponible en:\\ \url{http://www.electronics-tutorials.ws/blog/i-v-characteristic-curves.html}
+\end{thebibliography}
+
+
+\end{document}
