@@ -1,0 +1,163 @@
+\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}
+%
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%
+%Paquete de Idioma
+\usepackage[spanish]{babel}
+%
+%Codificación Alfabeto
+\usepackage[utf8]{inputenc}
+%
+%Codificación de Fuente
+\usepackage[T1]{fontenc}
+%
+%Índice
+\usepackage{makeidx}
+%
+%Gráficos
+\usepackage{graphicx}
+\usepackage{subfig}
+%\usepackage{xcolor} 
+%
+%Matemática
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{amstext} 
+%
+%Estilo de Página Numeración superior
+%\pagestyle{headings}
+%
+%Hiperlinks \href{url}{text}
+\usepackage[pdftex]{hyperref}
+%
+%Graficos y tablas
+\usepackage{multirow}
+%\usepackage{multicol}
+\usepackage{float}
+\usepackage{booktabs}
+%
+\decimalpoint
+%\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,mybibfile}
+%
+%
+\begin{document}
+%Titulo
+\title{Laboratorio 1: Cinemática del Movimiento Circular Uniformemente Variado}
+\thanks{Laboratorios de Física}
+
+\author{Juan Pablo, Sánchez Córdova, 201908274}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Alexis Marco Tulio, López Cacós, 201908359}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Emerson Obdulio, Calo García, 201901221}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+\author{Carlos Andrés, de León Salguero, 201900545}
+\affiliation{Facultad de Ingeniería, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+}%
+
+%Resumen
+\begin{abstract}
+\end{abstract}
+
+\maketitle{}
+
+\section{Objetivos}
+
+\subsection{Generales}
+\begin{itemize}
+\item[$\bullet$] Predecir el radio de un disco que gira con movimiento uniformemente variado
+\end{itemize}
+\subsection{Específicos}
+\begin{itemize}
+\item[*] Medir el tiempo que tarda el disco en dar n vueltas
+\item[*] Establecer una altura de referencia para la masa
+\item[*] Medir el tiempo que tarda la masa en recorrer la altura h
+\item[*] Comparar el radio obtenido de forma teórica y de forma experimental.
+\end{itemize}
+ 
+\section{Marco Teórico}
+
+\section{Diseño Experimental}
+
+Hace una descripción del método o técnica utilizada para medir y/o calcular las
+magnitudes físicas en estudio, y si es del caso, del aparato de medición. Hay que
+recordar que el "método" es el procedimiento o dirección que conducirá a la solución
+del problema planteado. Se recomienda redactar una breve introducción para explicar
+el enfoque metodológico seleccionado.\\
+
+\subsection{Materiales}
+\begin{itemize}
+
+\item[*] Un disco con su eje
+\item[*] 2 metros de hilo de cáñamo
+\item[*] Una cinta métrica
+\item[*] Un cronómetro
+\item[*] Un soporte de masa de 10 g con dos masas de 10 g cada una
+\item[*] Un vernier
+\item[*] Un trípode en forma de V
+\item[*] Una varilla de 1 metro
+\item[*] Una mordaza universal
+
+\end{itemize}
+
+
+\subsection{Magnitudes físicas a medir}
+\begin{itemize}
+\item[*] La posición angular $\theta$ del disco, en radianes, respecto a un punto de referencia arbitrariamente escogido.
+\item[*] El tiempo t que tarda el disco en realizar una vuelta, dos vueltas, tres vueltas, etc.
+\item[*] El radio R del disco que enrolla el hilo de cáñamo.
+\item[*] La altura h de la masa que cuelga del hilo de cáñamo.
+\item[*] Tiempo que tarda la masa que cuelga del hilo en recorrer la altura h.
+\end{itemize}
+
+\subsection{Procedimiento}
+\begin{enumerate}
+\item[*] Se montó el equipo como el manual mandaba.
+\item[*] Se enrolló la pita alrededor del disco más pequeño, se colocó la masa de 30 g, se dejó caer a partir del reposo y se observó que tan rápido dió vueltas el disco, no se disminuyó la masa.
+\item[*] Se hizo una marca sobre el disco, esta sirvió como punto de referencia para medir la posición angular $\theta$ del disco, por facilidad de toma de medidas, se midió el tiempo que tardó en dar vuelta completas el disco, osea 2$\pi$, 4$\pi$, 6$\pi$, etc...
+\item[*] A partir del reposo, se dejó en libertad el disco y se midió el tiempo (t)  que tardó en completar una vuelta, se realizó esta medición 5 veces.
+\item[*] Se repitió el paso anterior para 2 vueltas, 3 vueltas, hasta 5 vueltas y se tabularon los datos en una tabla como la que se mostraba en el manual.
+\item[*] Se graficó en qtiplot la posición angular vs tiempo, es decir $\theta$ vs t, se hizo click derecho sobre la gráfica y se seleccionó la opción de diferenciar, una vez hecho eso, se seleccionó fit linear para obtener la función que modela los datos experimentales que se obtuvieron, dicha función es la aceleración angular, y dado que muestra una función linear, se demostró que la aceleración angular es constante.
+\item[*] Se expresó la aceleración angular de la forma $$\alpha \pm \Delta\alpha$$
+\end{enumerate}
+
+\section{Resultados}
+
+
+\section{Discusión de Resultados}
+
+En este apartado se deben analizar los resultados obtenidos, contrastándolos con
+la teoría expuesta en la sección del Marco Teórico. Corresponde explicar el
+comportamiento de las tablas y gráficas expuestas en la sección de Resultados,
+tomando en cuenta el análisis estadístico apropiado.\\
+
+\section{Conclusiones}
+
+\begin{enumerate}
+\item Conclusión 1
+\item Conclusión 2
+\item etc.
+\end{enumerate}
+
+\section{Cálculos/Anexos}
+
+\begin{thebibliography}{99}
+%Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
+
+\bibitem{} Ing. Walter Geovanni Alvarez Marroquín \textit{Manual de Laboratorio de Física Uno}. Guatemala: Universidad de San Carlos de Guatemala, Facultad de Ingeniería.
+
+\bibitem{} Grossman, S. (Segunda edición). (1987). \textit{Álgebra lineal}. México: Grupo Editorial Iberoamericana.
+
+\bibitem{} Reckdahl, K. (Versión [3.0.1]). (2006).\textit{ Using Imported Graphics in LATEX and pdfLATEX}.
+
+\bibitem{}Anónimo.\textit{ I-V Characteristic Curves} [En linea][25 de octubre de 2012]. Disponible en:\\ \url{http://www.electronics-tutorials.ws/blog/i-v-characteristic-curves.html}
+\end{thebibliography}
+
+
+\end{document}
