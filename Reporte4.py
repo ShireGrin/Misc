@@ -1,79 +1,90 @@
 #!/usr/bin/python3
 
-from math import sqrt
-from statistics import stdev, mean
-import numpy as np
-import matplotlib.pyplot as plt
-from lmfit import Model
+from numpy import pi
 
-# Distancias antes de caída libre, en m
-d1  = [  0.2,   0.4,   0.6,   0.8]
-dd1 = [0.001, 0.001, 0.001, 0.001]
+dia_hilo = 0.25/1000.0 # en m
+l_hilo = 110/100.0 # en m
 
-corridas = [
-    [1.27, 1.14, 1.37, 1.34, 1.46, 1.26, 1.19, 1.32, 1.34, 1.25], # 1
-    [1.82, 1.81, 1.81, 1.88, 1.85, 1.82, 1.91, 1.94, 1.91, 1.91], # 2
-    [2.44, 2.34, 2.31, 2.38, 2.50, 2.53, 2.41, 2.26, 2.46, 2.38], # 3
-    [2.78, 2.78, 2.75, 2.95, 2.87, 2.73, 2.75, 2.75, 2.77, 2.83]  # 4
-]
-
-# Distancias luego de caer, en cm
-d2 = [23.9, 24.2, 23.8, 23.7, 23.5, 23.8, 23.6, 23.8, 24.0, 23.7]
-
-# Distancias luego de caer, en m
-d2 = list(map(lambda x: x/100, d2)) # Conversión a metros
-
-# Se obtiene la magnitud y la incerteza de la distancia en x luego de caer
-# Se redondea hasta el tercer decimal debido a que la incerteza
-# Solo tiene un dígito hasta el tercer decimal.
-x = round(mean(d2), 3)
-xerr = round(stdev(d2), 3)
-
-# Listas que contendrán las magnitudes [medias] e incertezas [desviaciones]
-# Para las 4 distancias antes de caer la esfera
-t = list(map(lambda x: round(mean(x), 2), corridas))
-dt = list(map(lambda x: round(stdev(x), 2), corridas))
-
-print("Tiempos y longitudes en x [antes de caída]:")
-for i in range(len(t)):
-    print(f"Tiempo {i+1}: ({t[i]} \u00b1 {dt[i]}) s")
-    print(f"Distancia {i+1}: ({d1[i]} \u00b1 {dd1[i]}) m\n")
-
-print(f"Longitud Experimental x: ({x} \u00b1 {xerr}) m")
+area_transversal = pi*dia_hilo**2/4 # en m^2
+g = 9.8 # m/s^2
 
 
-# Modelo de posición final que nos permitirá obtener a [como lo hace qtiplot]
-def pos(x, a):
-    return 0.5*a*(x**2)
-# Guardamos el modelo cuadrático
-cua = Model(pos)
-# Realizamos el fit, para obtener a, con a que empieza en 4
-res = cua.fit(d1, x=t, a=3)
 
-# Guardamos los resultados del fit en 2 variables
-# La magnitud y el error
-a, da = round(res.params['a'].value, 3), round(res.params['a'].stderr, 3)
+longitudes_iniciales = [0.865 , 0.865 , 0.865 , 0.865 , 0.865 , 0.865 , 0.865 ] # m
+longitudes_finales   = [0.910 , 0.930 , 0.950 , 0.980 , 1.000 , 1.010 , 1.025 ] # m
+masas                = [0.1793, 0.3293, 0.4803, 0.6083, 0.8063, 1.0063, 1.2030] # kg
 
-print(f"Aceleración en x: ({a} \u00b1 {da}) m/s^2")
 
-# Velocidad final de x, con su error, al multiplicar el tiempo por la aceleración
-# El tiempo será la media de la cuarta corrida
-# El error la desviación, como se explicó antes
-t4, dt4 = t[3], dt[3]
-Vf, dVf  = round(t4*a, 2), round(a*t4*(dt4/t4 + da/a), 2)
+delta_longitudes = [] # m
+for i in range(7): # Número de longitudes
+    lfinal = longitudes_finales[i]     # Obtenemos la iésima longitud final
+    linicial = longitudes_iniciales[i] # Obtenemos la iésima longitud inicial
 
-print(f"Velocidad Final en x [para el tiempo 4]: ({Vf} \u00b1 {dVf}) m/s")
+    delta_l = round(lfinal - linicial, 5) # Obtenemos la diferencia entre las longitudes
+    delta_longitudes.append(delta_l) # Agregamos la diferencia a la lista de diferencias
 
-# Altura de la mesa al suelo
-y = 98.1/100 # m
-yerr = 0.001/100 # m
 
-print(f"Altura de caída: ({y:.5f} \u00b1 {yerr:.5f}) m")
+tensiones = [] # N
+for i in range(7):
+    masa = masas[i] # Obtenemos la iésima masa
+    tension = round(masa*g, 5) # Multiplicamos por la gravedad para obtener la fuerza o tensión afectando al hilo, en Newtons
+    tensiones.append(tension)
+delta_tensiones = 7*[0.0001*9.8] # Una lista con 7 elementos iguales a 0.0001*9.8, igual a delta de la masa, por gravedad
 
-# Y con todo esto, y las ecuaciones escritas en el pizarrón por garrido
-# Ya que tenemos la altura y,
-# Podemos obtener la longitud en x [posición x de la esfera trás la caída] teóricamente
-L = round(sqrt(2/9.8)*Vf*sqrt(y), 2)
-Lerr = round(L*(dVf/Vf + yerr/(2*sqrt(y))), 2)
 
-print(f"Longitud teórica x: ({L} \u00b1 {Lerr}) m")
+esfuerzos = [] # kg/(s^2*m)
+for i in range(7):
+    fuerza = tensiones[i] # Se obtiene la iésima fuerza
+    esfuerzo = round(fuerza/area_transversal, 5) # Dividimos la fuerza por el área transversal para obtener el esfuerzo
+    esfuerzos.append(esfuerzo) # Guardamos el esfuerzo en la lista
+delta_esfuerzos = []
+for i in range(7):
+    esfuerzo = esfuerzos[i]
+    delta_tension = delta_tensiones[i]
+    tension = tensiones[i]
+    delta_esfuerzo = esfuerzo*(delta_tension/tension)
+    delta_esfuerzos.append(delta_esfuerzo)
+
+
+deformaciones = [] # Adimensional
+for i in range(7):
+    delta_l = delta_longitudes[i] # Obtenemos el iésimo delta
+    longitud_inicial = longitudes_iniciales[i] # Obtenemos la iésima longitud inicial (constante, todas son 0.865 m)
+    deformacion = round(delta_l/longitud_inicial, 5) # Se calcula la deformación
+    deformaciones.append(deformacion) # Se agrega la deformación a la lista
+delta_deformaciones = []
+for i in range(7):
+    deformacion = deformaciones[i]
+    longitud_inicial = longitudes_iniciales[i]
+    longitud_final = longitudes_finales[i]
+    delta_longitud_inicial = 0.001
+    delta_deformacion = deformacion*((0.001+0.001)/(longitud_final - longitud_inicial) + (delta_longitud_inicial)/(longitud_inicial))
+    delta_deformaciones.append(delta_deformacion)
+
+
+print(f"No.            Tensión                            Esfuerzo                                     Deformación")
+for i in range(7):
+    tension = tensiones[i]
+    dtension = delta_tensiones[i]
+    esfuerzo = esfuerzos[i]
+    desfuerzo = delta_esfuerzos[i]
+    deformacion = deformaciones[i]
+    ddeformacion = delta_deformaciones[i]
+    print(f"{i+1}    {tension} +- {dtension}            {esfuerzo} +- {desfuerzo}           {deformacion} +- {ddeformacion}")
+
+
+################################################
+# Al ejecutarse el programa, tenemos los resultados:
+# No.            Tensión                            Esfuerzo                                     Deformación
+# 1              1.75714 +- 0.00098                  35796162.13818 +- 19964.39606145009         0.05202 +- 0.002372138728323697
+# 2              3.22714 +- 0.00098                  65742756.23035 +- 19964.39606144853         0.07514 +- 0.002398867052023119
+# 3              4.70694 +- 0.00098                  95888994.28313 +- 19964.39606144701         0.09827 +- 0.002425842230533833
+# 4              5.96134 +- 0.00098                 121443421.24178 +- 19964.39606144666         0.13295 +- 0.002465873335008796
+# 5              7.90174 +- 0.00098                 160972925.44345 +- 19964.39606144735         0.15607 +- 0.002492575893812887
+# 6              9.86174 +- 0.00098                 200901717.56634 +- 19964.39606144689         0.16763 +- 0.002505929838548933
+# 7              11.7894 +- 0.00098                 240171684.61921 +- 19964.39606144722         0.18497 +- 0.002525963150289018
+# Nota: Los resultados serán redondeados al colocarlos en sus respectivas tablas
+
+# a1 = 1.1082031162523e+09 6.6385023231843e+07 # módulo de Young experimental obtenido en qtiplot
+# a1 = 1.11e9 0.07e9 # módulo de Young experimental obtenido en qtiplot redondeado
+################################################
